@@ -1,0 +1,9 @@
+python-binance==1.0.19
+python-dotenv==1.0.1
+
+# Uncomment if FTM uses MetaTrader (MT4/MT5):
+# metaapi-cloud-sdk==27.0.0
+
+# Optional — only if you add a backtesting module later:
+# pandas==2.2.2
+# numpy==1.26.4

@@ -1,0 +1,61 @@
+name: Trading Bot
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
+  workflow_dispatch:        # Allow manual trigger
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4      # Kill if takes longer than 4 min
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install python-binance python-dotenv requests
+
+      - name: Restore positions and ledger
+        uses: actions/cache@v4
+        with:
+          path: logs/
+          key: bot-logs-${{ github.run_number }}
+          restore-keys: |
+            bot-logs-
+
+      - name: Create logs directory
+        run: mkdir -p logs
+
+      - name: Run bot (single pass)
+        env:
+          BINANCE_API_KEY: ${{ secrets.BINANCE_API_KEY }}
+          BINANCE_API_SECRET: ${{ secrets.BINANCE_API_SECRET }}
+          BINANCE_TESTNET: "true"
+          FTM_SERVER_URL: ${{ secrets.FTM_SERVER_URL }}
+          FTM_EMAIL: ${{ secrets.FTM_EMAIL }}
+          FTM_API_KEY: ${{ secrets.FTM_API_KEY }}
+          FTM_SYSTEM_UUID: ${{ secrets.FTM_SYSTEM_UUID }}
+          FTM_ACCOUNT_INDEX: "0"
+          ACTIVE_BROKER: "ftm"
+          RISK_PER_TRADE_PCT: "0.2"
+          MAX_OPEN_TRADES: "3"
+          MAX_DAILY_DRAWDOWN_PCT: "2.5"
+          MAX_TOTAL_DRAWDOWN_PCT: "5.0"
+          LOG_LEVEL: "INFO"
+          LEDGER_PATH: "logs/ledger.jsonl"
+          DRY_RUN: "true"
+        run: python main.py --broker ftm --dry-run --single-pass
+
+      - name: Save positions and ledger
+        uses: actions/cache@v4
+        with:
+          path: logs/
+          key: bot-logs-${{ github.run_number }}
