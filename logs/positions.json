@@ -1,0 +1,38 @@
+{
+  "saved_at": "2026-05-07T13:00:00+00:00",
+  "positions": {
+    "RSI_14_30_70:USDCAD": {
+      "order_id": "1fc869cb",
+      "symbol": "USDCAD",
+      "side": "BUY",
+      "entry_price": 1.3607,
+      "stop_loss": 1.3584285714285713,
+      "take_profit": 1.367514285714286,
+      "qty": 10910.22,
+      "opened_at": "2026-05-05T16:02:32.504531+00:00",
+      "strategy": "RSI_14_30_70"
+    },
+    "EMA_9_21:EURUSD": {
+      "order_id": "c340d97e",
+      "symbol": "EURUSD",
+      "side": "BUY",
+      "entry_price": 1.17258,
+      "stop_loss": 1.1695135714285714,
+      "take_profit": 1.1817792857142857,
+      "qty": 8099.97,
+      "opened_at": "2026-05-06T04:28:49.463842+00:00",
+      "strategy": "EMA_9_21"
+    },
+    "EMA_9_21:USDCAD": {
+      "order_id": "30d63a20",
+      "symbol": "USDCAD",
+      "side": "BUY",
+      "entry_price": 1.3634,
+      "stop_loss": 1.3606325,
+      "take_profit": 1.3717025,
+      "qty": 8764.24,
+      "opened_at": "2026-05-06T16:57:56.593316+00:00",
+      "strategy": "EMA_9_21"
+    }
+  }
+}
