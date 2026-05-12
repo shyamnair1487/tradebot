@@ -90,7 +90,8 @@ class RiskGate:
             return RiskDecision(approved=False, reason=RejectionReason.ZERO_SIZE)
 
         risk_amount = balance * self.risk_pct
-        raw_qty = risk_amount / stop_distance
+        lot_size = broker.get_lot_size(signal.symbol)
+        raw_qty = risk_amount / (stop_distance * lot_size)
 
         # Round down to broker's minimum quantity increment
         min_qty = broker.get_min_qty(signal.symbol)
