@@ -2,13 +2,16 @@ name: Trading Bot
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
-  workflow_dispatch:        # Allow manual trigger
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 4      # Kill if takes longer than 4 min
+    timeout-minutes: 4
 
     steps:
       - name: Checkout code
@@ -75,6 +78,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add logs/ledger.jsonl logs/positions.json || true
           git diff --staged --quiet || git commit -m "bot run: update logs [skip ci]"
           git push || true
