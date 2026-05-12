@@ -1,0 +1,6 @@
+{"event": "POSITION_CLOSED", "key": "RSI_14_30_70:USDCAD", "symbol": "USDCAD", "side": "BUY", "entry_price": 1.3607, "exit_price": 1.369545, "exit_reason": "TP", "pips": 88.4, "logged_at": "2026-05-08T14:19:20.246360+00:00"}
+{"event": "POSITION_CLOSED", "key": "RSI_14_30_70:USDCAD", "symbol": "USDCAD", "side": "BUY", "entry_price": 1.3607, "exit_price": 1.3695650000000001, "exit_reason": "TP", "pips": 88.7, "logged_at": "2026-05-08T14:19:23.559459+00:00"}
+{"event": "POSITION_CLOSED", "key": "RSI_14_30_70:USDCAD", "symbol": "USDCAD", "side": "BUY", "entry_price": 1.3607, "exit_price": 1.369645, "exit_reason": "TP", "pips": 89.4, "logged_at": "2026-05-08T14:19:27.238519+00:00"}
+{"event": "POSITION_CLOSED", "key": "RSI_14_30_70:USDCAD", "symbol": "USDCAD", "side": "BUY", "entry_price": 1.3607, "exit_price": 1.369675, "exit_reason": "TP", "pips": 89.7, "logged_at": "2026-05-08T14:19:30.623336+00:00"}
+{"event": "POSITION_CLOSED", "key": "RSI_14_30_70:USDCAD", "symbol": "USDCAD", "side": "BUY", "entry_price": 1.3607, "exit_price": 1.369675, "exit_reason": "TP", "pips": 89.7, "logged_at": "2026-05-08T14:19:34.251736+00:00"}
+{"event": "POSITION_CLOSED", "key": "RSI_14_30_70:USDCAD", "symbol": "USDCAD", "side": "BUY", "entry_price": 1.3607, "exit_price": 1.369675, "exit_reason": "TP", "pips": 89.7, "logged_at": "2026-05-08T14:19:37.172477+00:00"}

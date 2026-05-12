@@ -1,17 +1,6 @@
 {
-  "saved_at": "2026-05-07T13:00:00+00:00",
+  "saved_at": "2026-05-08T14:19:37.798907+00:00",
   "positions": {
-    "RSI_14_30_70:USDCAD": {
-      "order_id": "1fc869cb",
-      "symbol": "USDCAD",
-      "side": "BUY",
-      "entry_price": 1.3607,
-      "stop_loss": 1.3584285714285713,
-      "take_profit": 1.367514285714286,
-      "qty": 10910.22,
-      "opened_at": "2026-05-05T16:02:32.504531+00:00",
-      "strategy": "RSI_14_30_70"
-    },
     "EMA_9_21:EURUSD": {
       "order_id": "c340d97e",
       "symbol": "EURUSD",
