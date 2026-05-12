@@ -1,7 +1,6 @@
 """
 brokers/base.py
 Abstract base class every broker adapter must implement.
-The rest of the bot only ever talks to this interface — never to broker SDKs directly.
 """
 
 from abc import ABC, abstractmethod
@@ -12,7 +11,7 @@ class BaseBroker(ABC):
 
     @abstractmethod
     def get_balance(self) -> float:
-        """Return available trading balance in quote currency (e.g. USDT)."""
+        """Return available trading balance in quote currency."""
         ...
 
     @abstractmethod
@@ -27,8 +26,12 @@ class BaseBroker(ABC):
 
     @abstractmethod
     def get_min_qty(self, symbol: str) -> float:
-        """Return the minimum order quantity increment for a symbol."""
+        """Return the minimum order quantity increment for a symbol (in lots)."""
         ...
+
+    def get_lot_size(self, symbol: str) -> float:
+        """Return the contract/lot size for a symbol. Default 100,000 for forex."""
+        return 100000.0
 
     @abstractmethod
     def get_candles(self, symbol: str, timeframe: str, limit: int = 200) -> list:
@@ -37,12 +40,7 @@ class BaseBroker(ABC):
 
     @abstractmethod
     def place_order(self, order: Order) -> Order:
-        """
-        Submit an order. Must return the Order with:
-          - broker_order_id set
-          - status updated to FILLED / REJECTED
-          - fill_price and fee populated if filled
-        """
+        """Submit an order. Must return Order with broker_order_id, status, fill_price."""
         ...
 
     @abstractmethod
