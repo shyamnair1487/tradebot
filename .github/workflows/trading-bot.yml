@@ -78,7 +78,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
+          git add logs/ledger.jsonl logs/positions.json || true
+          git stash || true
+          git pull --rebase origin main || true
+          git stash pop || true
           git add logs/ledger.jsonl logs/positions.json || true
           git diff --staged --quiet || git commit -m "bot run: update logs [skip ci]"
           git push || true
