@@ -20,6 +20,7 @@ from core.ledger import Ledger
 from core.models import Order, OrderStatus, OrderType, RejectionReason
 from core.risk import RiskGate
 from strategies.base import BaseStrategy
+from core.notifier import notify_position_closed, notify_position_opened
 
 logger = logging.getLogger(__name__)
 
@@ -150,6 +151,7 @@ class TradingEngine:
                         "exit_reason": result,
                         "pips": pips,
                     })
+                    notify_position_closed(symbol, side, entry, current_price, result, pips)
                     closed.append(key)
             except Exception as e:
                 logger.error("Error checking position " + key + ": " + str(e))
@@ -274,6 +276,7 @@ class TradingEngine:
                 "strategy": strategy.name,
             }
             self._save_positions()
+            notify_position_opened(strategy.name, strategy.symbol, order.side.value, order.fill_price, order.stop_loss, order.take_profit, order.qty)
             logger.info(strategy.name + ": position opened for " + strategy.symbol)
         elif order.status == OrderStatus.REJECTED:
             logger.error("Order rejected by broker: " + order.id)

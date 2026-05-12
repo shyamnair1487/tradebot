@@ -55,6 +55,8 @@ jobs:
           MAX_DAILY_DRAWDOWN_PCT: "2.5"
           MAX_TOTAL_DRAWDOWN_PCT: "5.0"
           LOG_LEVEL: "INFO"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           LEDGER_PATH: "logs/ledger.jsonl"
           DRY_RUN: "true"
         run: python main.py --broker ftm --dry-run --single-pass
