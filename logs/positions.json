@@ -1,5 +1,5 @@
 {
-  "saved_at": "2026-05-12T10:24:39.496499+00:00",
+  "saved_at": "2026-05-12T15:19:55.584809+00:00",
   "positions": {
     "EMA_9_21:EURUSD": {
       "order_id": "c340d97e",
@@ -10,17 +10,6 @@
       "take_profit": 1.1817792857142857,
       "qty": 8099.97,
       "opened_at": "2026-05-06T04:28:49.463842+00:00",
-      "strategy": "EMA_9_21"
-    },
-    "EMA_9_21:USDCAD": {
-      "order_id": "30d63a20",
-      "symbol": "USDCAD",
-      "side": "BUY",
-      "entry_price": 1.3634,
-      "stop_loss": 1.3606325,
-      "take_profit": 1.3717025,
-      "qty": 8764.24,
-      "opened_at": "2026-05-06T16:57:56.593316+00:00",
       "strategy": "EMA_9_21"
     },
     "EMA_9_21:USDCHF": {
