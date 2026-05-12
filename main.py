@@ -117,8 +117,6 @@ def main():
     import time
     if args.single_pass:
         logger.info("Single pass mode — running once and exiting")
-        from core.notifier import send_telegram
-        send_telegram("🤖 PipTracker run started — monitoring EURUSD, USDCAD, USDCHF")
         try:
             engine.run_once()
         except Exception as e:
