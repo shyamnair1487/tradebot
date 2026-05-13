@@ -24,7 +24,7 @@ from core.notifier import notify_position_closed, notify_position_opened
 
 logger = logging.getLogger(__name__)
 
-POSITIONS_FILE = "logs/positions.json"
+POSITIONS_FILE = "logs/live_positions.json"
 
 
 class TradingEngine:
