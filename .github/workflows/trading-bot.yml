@@ -1,33 +1,26 @@
 name: Trading Bot
-
 on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   run-bot:
     runs-on: ubuntu-latest
     timeout-minutes: 4
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-
       - name: Install dependencies
         run: pip install python-binance python-dotenv requests
-
       - name: Restore positions and ledger
         uses: actions/cache@v4
         with:
@@ -35,10 +28,8 @@ jobs:
           key: live-logs-${{ github.run_number }}
           restore-keys: |
             live-logs-
-
       - name: Create logs directory
         run: mkdir -p logs
-
       - name: Run bot (single pass)
         env:
           BINANCE_API_KEY: ${{ secrets.BINANCE_API_KEY }}
@@ -58,9 +49,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           LEDGER_PATH: "logs/ledger.jsonl"
-
         run: python main.py --broker ftm --single-pass
-
       - name: Print ledger
         run: |
           echo "=== LEDGER (last 20 entries) ==="
@@ -75,8 +64,8 @@ jobs:
           else
             echo "No positions file found"
           fi
-
       - name: Commit logs to repo
+        if: false
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -87,7 +76,6 @@ jobs:
           git add logs/ledger.jsonl logs/positions.json || true
           git diff --staged --quiet || git commit -m "bot run: update logs [skip ci]"
           git push || true
-
       - name: Save positions and ledger
         uses: actions/cache@v4
         with:
