@@ -48,9 +48,9 @@ def notify_position_opened(strategy, symbol, side, entry, sl, tp, qty):
         f"✅ <b>POSITION OPENED</b>\n"
         f"Strategy: {strategy}\n"
         f"Pair: {symbol} {side}\n"
-        f"Entry: {entry}\n"
-        f"SL: {sl}\n"
-        f"TP: {tp}\n"
+        f"Entry: {round(entry, 5)}\n"
+        f"SL: {round(sl, 5)}\n"
+        f"TP: {round(tp, 5)}\n"
         f"Qty: {qty} lots"
     )
 
@@ -60,7 +60,7 @@ def notify_position_closed(symbol, side, entry, exit_price, reason, pips):
     send_telegram(
         f"{emoji} <b>POSITION CLOSED</b>\n"
         f"Pair: {symbol} {side}\n"
-        f"Entry: {entry} → Exit: {exit_price}\n"
+        f"Entry: {round(entry, 5)} → Exit: {round(exit_price, 5)}\n"
         f"Reason: {reason}\n"
         f"Pips: {pips:+.1f}"
     )
