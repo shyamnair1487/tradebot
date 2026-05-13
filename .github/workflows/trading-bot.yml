@@ -32,9 +32,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: logs/
-          key: bot-logs-${{ github.run_number }}
+          key: live-logs-${{ github.run_number }}
           restore-keys: |
-            bot-logs-
+            live-logs-
 
       - name: Create logs directory
         run: mkdir -p logs
@@ -92,4 +92,4 @@ jobs:
         uses: actions/cache@v4
         with:
           path: logs/
-          key: bot-logs-${{ github.run_number }}
+          key: live-logs-${{ github.run_number }}
