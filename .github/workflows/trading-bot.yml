@@ -58,8 +58,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           LEDGER_PATH: "logs/ledger.jsonl"
-          DRY_RUN: "true"
-        run: python main.py --broker ftm --dry-run --single-pass
+
+        run: python main.py --broker ftm --single-pass
 
       - name: Print ledger
         run: |
