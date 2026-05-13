@@ -94,3 +94,4 @@ Every event is a JSON line in `logs/ledger.jsonl`:
 - `ERROR` — caught exceptions with context
 
 Use this to audit every decision the bot made.
+# Live trading started 2026-05-13
