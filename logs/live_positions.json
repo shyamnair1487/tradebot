@@ -1,4 +1,16 @@
 {
-  "saved_at": "2026-05-15T05:36:18.579119+00:00",
-  "positions": {}
+  "saved_at": "2026-05-19T20:06:06.852116+00:00",
+  "positions": {
+    "RSI_14_30_70:USDCAD": {
+      "order_id": "3f4b1b73",
+      "symbol": "USDCAD",
+      "side": "SELL",
+      "entry_price": 1.3751,
+      "stop_loss": 1.3775925,
+      "take_profit": 1.3675425,
+      "qty": 0.04,
+      "opened_at": "2026-05-19T20:06:06.852031+00:00",
+      "strategy": "RSI_14_30_70"
+    }
+  }
 }
