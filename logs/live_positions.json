@@ -1,15 +1,26 @@
 {
-  "saved_at": "2026-05-19T20:06:06.852116+00:00",
+  "saved_at": "2026-05-20T09:51:24.739792+00:00",
   "positions": {
-    "RSI_14_30_70:USDCAD": {
-      "order_id": "3f4b1b73",
-      "symbol": "USDCAD",
+    "RSI_14_30_70:USDCHF": {
+      "order_id": "7573f292",
+      "symbol": "USDCHF",
       "side": "SELL",
-      "entry_price": 1.3751,
-      "stop_loss": 1.3775925,
-      "take_profit": 1.3675425,
-      "qty": 0.04,
-      "opened_at": "2026-05-19T20:06:06.852031+00:00",
+      "entry_price": 0.79055,
+      "stop_loss": 0.7931142857142857,
+      "take_profit": 0.7827771428571428,
+      "qty": 0.03,
+      "opened_at": "2026-05-20T09:51:19.762904+00:00",
+      "strategy": "RSI_14_30_70"
+    },
+    "RSI_14_30_70:EURUSD": {
+      "order_id": "28d6c64d",
+      "symbol": "EURUSD",
+      "side": "BUY",
+      "entry_price": 1.158985,
+      "stop_loss": 1.1559957142857145,
+      "take_profit": 1.167892857142857,
+      "qty": 0.03,
+      "opened_at": "2026-05-20T09:51:24.739724+00:00",
       "strategy": "RSI_14_30_70"
     }
   }
