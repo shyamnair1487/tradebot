@@ -1,17 +1,6 @@
 {
-  "saved_at": "2026-05-22T10:57:26.114321+00:00",
+  "saved_at": "2026-05-24T22:07:31.332176+00:00",
   "positions": {
-    "RSI_14_30_70:USDCHF": {
-      "order_id": "7573f292",
-      "symbol": "USDCHF",
-      "side": "SELL",
-      "entry_price": 0.79055,
-      "stop_loss": 0.7931142857142857,
-      "take_profit": 0.7827771428571428,
-      "qty": 0.03,
-      "opened_at": "2026-05-20T09:51:19.762904+00:00",
-      "strategy": "RSI_14_30_70"
-    },
     "RSI_14_30_70:EURUSD": {
       "order_id": "28d6c64d",
       "symbol": "EURUSD",
