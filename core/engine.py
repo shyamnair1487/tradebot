@@ -203,6 +203,12 @@ class TradingEngine:
             logger.debug(strategy.name + ": skipping, position already open for " + strategy.symbol)
             return
 
+        # Skip if any other strategy already has an open position on the same symbol
+        open_symbols = [v.get("symbol") for v in self._open_positions.values()]
+        if strategy.symbol in open_symbols:
+            logger.info(strategy.name + ": skipping " + strategy.symbol + " — already have position on this symbol from another strategy")
+            return
+
         # Fetch candles
         candles = self.broker.get_candles(
             symbol=strategy.symbol,
