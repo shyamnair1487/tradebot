@@ -1,5 +1,5 @@
 {
-  "saved_at": "2026-06-12T05:10:43.576676+00:00",
+  "saved_at": "2026-06-15T16:30:18.787497+00:00",
   "positions": {
     "RSI_14_30_70:EURUSD": {
       "order_id": "9adb65f0",
@@ -22,6 +22,17 @@
       "qty": 0.03,
       "opened_at": "2026-06-12T05:10:43.576614+00:00",
       "strategy": "EMA_9_21"
+    },
+    "RSI_14_30_70:USDCAD": {
+      "order_id": "fa4bd962",
+      "symbol": "USDCAD",
+      "side": "SELL",
+      "entry_price": 1.39845,
+      "stop_loss": 1.4019471428571428,
+      "take_profit": 1.3879585714285712,
+      "qty": 0.02,
+      "opened_at": "2026-06-15T16:30:18.787431+00:00",
+      "strategy": "RSI_14_30_70"
     }
   }
 }
