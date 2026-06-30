@@ -1,17 +1,6 @@
 {
-  "saved_at": "2026-06-25T06:02:49.418625+00:00",
+  "saved_at": "2026-06-30T11:41:04.242744+00:00",
   "positions": {
-    "RSI_14_30_70:USDCAD": {
-      "order_id": "5e238fbc",
-      "symbol": "USDCAD",
-      "side": "SELL",
-      "entry_price": 1.4210150000000001,
-      "stop_loss": 1.424157142857143,
-      "take_profit": 1.4114885714285714,
-      "qty": 0.03,
-      "opened_at": "2026-06-23T20:34:29.774396+00:00",
-      "strategy": "RSI_14_30_70"
-    },
     "RSI_14_30_70:USDCHF": {
       "order_id": "6ef6e836",
       "symbol": "USDCHF",
